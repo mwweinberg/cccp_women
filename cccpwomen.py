@@ -76,6 +76,17 @@ eth_cut = ethnicity_unparsed.split('，')
 ethnicity = eth_cut[2]
 print(ethnicity)
 
+# this is the picture section
+img_url_unparsed = str(soup.find('img', {'id': 'userimg'}))
+img_url_end = img_url_unparsed.split('"')[7]
+img_url = 'https://web.archive.org' + img_url_end
+print(img_url)
+#I assume this will be a dynamically created variable
+url_save_file_name = 'guy.jpg'
+#uses requests to download the picture
+image_r = requests.get(img_url, allow_redirects=True)
+#writes the downloaded picture to the file 
+open(url_save_file_name, 'wb').write(image_r.content)
 
 
 
