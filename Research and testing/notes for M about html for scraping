@@ -1,0 +1,213 @@
+#LOOP 1
+#PLACE PAGE (province) -- here's the one i'm using as my template
+#https://web.archive.org/web/20171224064640/http://ldzl.people.com.cn/dfzlk/front/personProvince1028.htm
+
+#province -- there are no other h1s at all on the page, so this one's easy
+<h1 class="red">安徽省</h1>
+
+#pool_peers -- we're no longer collecting this; it will be generated automatically after the data de-dups
+
+
+#(prepping for loop 2)
+#name and rank_peers part 1 -- these are the only p-tags on the whole page, so just go to these in the order in which they appear in the page and pull the hrefs in order -- that is what you will use to assign their rank
+          <p><b>书　　记：</b>
+                <a href="personPage6129.htm">李锦斌</a>
+           <br><b>副 书 记：</b>
+                 <a href="personPage15012.htm">李国英</a>&nbsp;&nbsp;
+                 <a href="personPage16165.htm">信长星</a>&nbsp;&nbsp;
+           <br><b>其他常委： </b>
+                 <a href="personPage6138.htm">邓向阳</a>&nbsp;&nbsp;
+                 <a href="personPage4434.htm">陶明伦</a>&nbsp;&nbsp;
+                 <a href="personPage15507.htm">刘惠</a>&nbsp;&nbsp;
+                 <a href="personPage15563.htm">刘莉</a>&nbsp;&nbsp;
+                 <a href="personPage4328.htm">孙云飞</a>&nbsp;&nbsp;
+                 <a href="personPage4326.htm">姚玉舟</a>&nbsp;&nbsp;
+                 <a href="personPage4316.htm">虞爱华</a>&nbsp;&nbsp;
+                 <a href="personPage4314.htm">宋国权</a>&nbsp;&nbsp;
+                 <a href="personPage12184.htm">严植婵</a>&nbsp;&nbsp;
+          </p>
+          .....
+          <p><b>副省长： </b>
+               <a href="personPage6138.htm">邓向阳</a>&nbsp;&nbsp;
+               <a href="personPage6139.htm">谢广祥</a>&nbsp;&nbsp;
+               <a href="personPage6143.htm">方春明</a>&nbsp;&nbsp;
+               <a href="personPage12142.htm">李建中</a>&nbsp;&nbsp;
+               <a href="personPage4324.htm">张曙光</a>&nbsp;&nbsp;
+               <a href="personPage5422.htm">何树山</a>&nbsp;&nbsp;
+               <a href="personPage4492.htm">杨光荣</a>&nbsp;&nbsp;
+          </p>
+
+#name and rank_peers part 2 -- after grabbing all the hrefs within the p-tags, go back to top of page and grab all the "em class" hrefs in order -- these will then be added to the bottom of the ranking system
+          <em class=""><a href="personPage6129.htm">李锦斌</a></em>
+          .....
+          <em class=""><a href="personPage6129.htm">李锦斌</a></em>
+          .....
+          <em class=""><a href="personPage15012.htm">李国英</a></em>
+          .....
+          <em class=""><a href="personPage6130.htm">徐立全</a></em>
+
+
+
+#(prepping for Loop 3)瑶海区
+#city -- this is the only <ol class="fl"> on the page. within this <ol>, find each <li> (or <span>, if that's somehow easier), and use the first href after that tag.  There are 2 other hrefs in each <li>, but we don't need them for our purposes in this loop.
+    <ol class="fl">
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1029.htm" title="点击查看 合肥市 更多领导信息">合肥市</a>&nbsp;</span><em><a href="personPage4314.htm">宋国权</a></em><i><a href="personPage16006.htm">凌云</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1039.htm" title="点击查看 芜湖市 更多领导信息">芜湖市</a>&nbsp;</span><em><a href="personPage4305.htm">潘朝晖</a></em><i><a href="personPage16793.htm">贺懋燮</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1048.htm" title="点击查看 蚌埠市 更多领导信息">蚌埠市</a>&nbsp;</span><em><a href="personPage18603.htm">汪莹纯</a></em><i><a href="personPage16266.htm">王诚</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1056.htm" title="点击查看 淮南市 更多领导信息">淮南市</a>&nbsp;</span><em><a href="personPage4331.htm">沈强</a></em><i><a href="personPage16792.htm">张孝成</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1063.htm" title="点击查看 马鞍山市 更多领导信息">马鞍山市</a>&nbsp;</span><em><a href="personPage18604.htm">张岳峰</a></em><i><a href="personPage16007.htm">左俊</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1070.htm" title="点击查看 淮北市 更多领导信息">淮北市</a>&nbsp;</span><em><a href="personPage4313.htm">黄晓武</a></em><i><a href="personPage16044.htm">戴启远</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1075.htm" title="点击查看 铜陵市 更多领导信息">铜陵市</a>&nbsp;</span><em><a href="personPage15833.htm">李猛</a></em><i><a href="personPage.htm">空缺</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1080.htm" title="点击查看 安庆市 更多领导信息">安庆市</a>&nbsp;</span><em><a href="personPage4317.htm">魏晓明</a></em><i><a href="personPage15595.htm">陈冰冰</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1092.htm" title="点击查看 黄山市 更多领导信息">黄山市</a>&nbsp;</span><em><a href="personPage4319.htm">任泽锋</a></em><i><a href="personPage12221.htm">孔晓宏</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1100.htm" title="点击查看 滁州市 更多领导信息">滁州市</a>&nbsp;</span><em><a href="personPage4321.htm">张祥安</a></em><i><a href="personPage4321.htm">张祥安</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1109.htm" title="点击查看 阜阳市 更多领导信息">阜阳市</a>&nbsp;</span><em><a href="personPage4323.htm">李平</a></em><i><a href="personPage16272.htm">孙正东</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1118.htm" title="点击查看 宿州市 更多领导信息">宿州市</a>&nbsp;</span><em><a href="personPage4325.htm">史翔</a></em><i><a href="personPage16275.htm">杨军</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1142.htm" title="点击查看 宣城市 更多领导信息">宣城市</a>&nbsp;</span><em><a href="personPage4327.htm">韩军</a></em><i><a href="personPage16117.htm">张冬云</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1124.htm" title="点击查看 六安市 更多领导信息">六安市</a>&nbsp;</span><em><a href="personPage4328.htm">孙云飞</a></em><i><a href="personPage18607.htm">叶露中</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1132.htm" title="点击查看 亳州市 更多领导信息">亳州市</a>&nbsp;</span><em><a href="personPage5889.htm">汪一光</a></em><i><a href="personPage15590.htm">杜延安</a></i></li>
+    <li><span><a href="/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/chengqu1137.htm" title="点击查看 池州市 更多领导信息">池州市</a>&nbsp;</span><em><a href="personPage4309.htm">王宏</a></em><i><a href="personPage15048.htm">雍成瀚</a></i></li>
+    </ol>
+
+
+
+
+
+#LOOP 2
+#PERSON PAGE -- example page
+#https://web.archive.org/web/20171212033200/http://ldzl.people.com.cn:80/dfzlk/front/personPage6129.htm
+#we'll need to have it print a separate list of webpages that weren't archived as it encounters them.
+
+#title and rank_indiv -- there are 2 instances of <span class="red2"> on the page, but they both contain the same text. so you can just scrape one, or scrape both and de-dup.  whatever.  right now we should just split the titles at each instance of 、 or ， and we can figure out later how to fix the naming conventions (it may be that we just strip out any locality references). Title should be assigned rank_indiv based on the order in which they appear in the string.
+        <span class="red2">安徽省委书记、省人大常委会主任</span>
+
+#affiliation -- we will generate lists of titles for party and state to use as a sorting mechanism later
+
+#gender -- Pull the character right after <b>性别：</b>  and before the next <b>
+        <b>性别：</b>男<br>
+
+#dob -- Pull the characters right after <b>出生年月：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>出生年月：</b>1971年07月<br>
+
+#birth_province, birth_place -- Pull the characters right after <b>籍贯：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>籍贯：</b>安徽合肥<br>
+
+#education -- Pull the characters right after <b>学位/学历：</b>  and before the next <b>
+        <b>学位/学历：</b>硕士<br>
+
+#ethnicity -- this is the only place "p2j_text" appears on the page, and it is the first p-tag after that. We'll want to capture the 3rd bit of information as delimited by commas before and after it (so the characters between the second ， and third ，)
+        <div class="p2j_text">
+          <p>宋国权，男，汉族，1960年3月生，安徽太和人，1982年8月参加工作，1985年12月加入中国共产党，中央党校研究生学历，经济学学士学位，高级经济师。</p>
+
+#photo -- this is the only place <dt><img appears in the text. Search for it and go to the url just after src=" . (The src=" appears at slightly different positions relative to <dt><img based on the level of the leader.) Scrape the image that appears at the link.
+        <dt><img id="userimg" src="/web/20171212033200im_/http://ldzl.people.com.cn:80/dfzlk/image/upload/20161104_9sIDVFvwWRymfzsGlT6WTe2toy9WkWVG.jpg" onerror="hideImg();" width="106" height="149"></dt>
+
+#data_dump -- pull everything within this div
+        <div class="p2j_text">
+        .....
+        </div>
+
+
+
+#LOOP 3
+#PLACE PAGE (city) -- here's the one i'm using as my template
+#https://web.archive.org/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/chengqu1029.htm
+
+#(prepping for loop 4)
+#name and rank_peers -- there will only be 2 of these.  Just pull the <em> tags in order and use that as the rank_peers
+          <em class=""><a href="personPage4314.htm">宋国权</a></em>
+          .....
+          <em class=""><a href="personPage16006.htm">凌云</a></em>
+
+
+#(prepping for loop 5)
+#county part 1 -- this is the only <ol class="fl"> on the page. within this <ol>, find each <li> (or <span>, if that's somehow easier).
+         <ol class="fl">
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">瑶海区</a>&nbsp;</span><em><a href="personPage15580.htm">路军</a></em><i><a href="personPage11575.htm">单虎</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">庐阳区</a>&nbsp;</span><em><a href="personPage15581.htm">徐静平</a></em><i><a href="personPage11585.htm">黄卫东</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">蜀山区</a>&nbsp;</span><em><a href="personPage11587.htm">李学明</a></em><i><a href="personPage15582.htm">葛斌</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">包河区</a>&nbsp;</span><em><a href="personPage9607.htm">宁波</a></em><i><a href="personPage15583.htm">葛锐</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">长丰县</a>&nbsp;</span><em><a href="personPage9613.htm">许华</a></em><i><a href="personPage17603.htm">黄韡</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">肥东县</a>&nbsp;</span><em><a href="personPage9608.htm">耿延强</a></em><i><a href="personPage11577.htm">孙良鸿</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">肥西县</a>&nbsp;</span><em><a href="personPage11578.htm">金成俊</a></em><i><a href="personPage18160.htm">李煜</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">庐江县</a>&nbsp;</span><em><a href="personPage9627.htm">王连贵</a></em><i><a href="personPage17216.htm">许华为</a></i></li>
+         <li><span><a href="/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/xian1028.htm" title="点击查看 安徽省 更多县级领导信息">巢湖市</a>&nbsp;</span><em><a href="personPage11579.htm">胡启生</a></em><i><a href="personPage16385.htm">张生</a></i></li>
+         </ol>
+
+#county part 2 -- The first href in the <li> is the county. we do not/not need to go to that page -- instead we need to pull the name of the county, which is the last chunk of Chinese characters just after title:="squiggle squiggle"> and before you get to </a>&nbsp;</span . Here's one of the lines from above used as an example:
+        title="点击查看 安徽省 更多县级领导信息">瑶海区</a>&nbsp;</span>
+
+#county part 3 -- The second two hrefs in each <li> go to the 2 leaders at that level.  We should go to each of those places, and rank them 1 and 2 for that county.  (each <li> will have a 1 and 2 ranking within it -- we are not/not ranking the <li>s against each other)
+        <em><a href="personPage15580.htm">路军</a></em><i><a href="personPage11575.htm">单虎</a></i></li>
+
+
+
+
+
+#LOOP 4
+#PERSON PAGE -- example page
+# https://web.archive.org/web/20171004094227/http://ldzl.people.com.cn/dfzlk/front/personPage4314.htm
+#we'll need to have it print a separate list of webpages that weren't archived as it encounters them. If something is unavailable, we'll want it to print the name of the person as well as whatever titles they had listed on the parent page.
+
+#title and rank_indiv -- there are 2 instances of <span class="red2"> on the page, but they both contain the same text. so you can just scrape one, or scrape both and de-dup.  whatever.  right now we should just split the titles at each instance of 、 or ， and we can figure out later how to fix the naming conventions (it may be that we just strip out any locality references). Title should be assigned rank_indiv based on the order in which they appear in the string.
+        <span class="red2">安徽省委书记、省人大常委会主任</span>
+
+#affiliation -- we will generate lists of titles for party and state to use as a sorting mechanism later
+
+#gender -- Pull the character right after <b>性别：</b>  and before the next <b>
+        <b>性别：</b>男<br>
+
+#dob -- Pull the characters right after <b>出生年月：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>出生年月：</b>1971年07月<br>
+
+#birth_province, birth_place -- Pull the characters right after <b>籍贯：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>籍贯：</b>安徽合肥<br>
+
+#education -- Pull the characters right after <b>学位/学历：</b>  and before the next <b>
+        <b>学位/学历：</b>硕士<br>
+
+#ethnicity -- -- this is the only place "p2j_text" appears on the page, and it is the first p-tag after that. We'll want to capture the 3rd bit of information as delimited by commas before and after it (so the characters between the second ， and third ，)
+        <div class="p2j_text">
+          <p>宋国权，男，汉族，1960年3月生，安徽太和人，1982年8月参加工作，1985年12月加入中国共产党，中央党校研究生学历，经济学学士学位，高级经济师。</p>
+
+#photo -- this is the only place <dt><img appears in the text. Search for it and go to the url just after src=" . (The src=" appears at slightly different positions relative to <dt><img based on the level of the leader.) Scrape the image that appears at the link.
+        <dt><img id="userimg" src="/web/20171212033200im_/http://ldzl.people.com.cn:80/dfzlk/image/upload/20161104_9sIDVFvwWRymfzsGlT6WTe2toy9WkWVG.jpg" onerror="hideImg();" width="106" height="149"></dt>
+
+#data_dump -- pull everything within this div
+        <div class="p2j_text">
+        .....
+        </div>
+
+
+
+#LOOP 5
+#PERSON PAGE -- example page
+#https://web.archive.org/web/20150414230808/http://ldzl.people.com.cn/dfzlk/front/personPage11575.htm
+#we'll need to have it print a separate list of webpages that weren't archived as it encounters them. If something is unavailable, we'll want it to print the name of the person as well as whatever titles they had listed on the parent page.
+
+#title and rank_indiv -- there are 2 instances of <span class="red2"> on the page, but they both contain the same text. so you can just scrape one, or scrape both and de-dup.  whatever.  right now we should just split the titles at each instance of 、 or ， and we can figure out later how to fix the naming conventions (it may be that we just strip out any locality references). Title should be assigned rank_indiv based on the order in which they appear in the string.
+        <span class="red2">安徽省合肥市瑶海区区长</span>
+
+#affiliation -- we will generate lists of titles for party and state to use as a sorting mechanism later
+
+#gender -- this may be unavailable for some of these individuals.  It can just read NULL though. Pull the character right after <b>性别：</b>  and before the next <b>
+        <b>性别：</b>男<br>
+
+#dob -- this may be unavailable for some of these individuals.  It can just read NULL though. Pull the characters right after <b>出生年月：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>出生年月：</b>1971年07月<br>
+
+#birth_province, birth_place -- this may be unavailable for some of these individuals.  It can just read NULL though. Pull the characters right after <b>籍贯：</b>  and before the next <b> . we'll have to write a parser to correctly deal with this information.
+        <b>籍贯：</b>安徽合肥<br>
+
+#education -- this may be unavailable for some of these individuals.  It can just read NULL though. Pull the characters right after <b>学位/学历：</b>  and before the next <b>
+        <b>学位/学历：</b>硕士<br>
+
+#ethnicity -- does not appear to be available at this level. Should skip this here, unless we have some great way of searching the text for keywords, which seems like more trouble than it's worth.
+
+#photo -- this is the only place <dt><img appears in the text. Search for it and go to the url just after src=" . (The src=" appears at slightly different positions relative to <dt><img based on the level of the leader.) Scrape the image that appears at the link.
+        <dt><img id="userimg" src="/web/20171212033200im_/http://ldzl.people.com.cn:80/dfzlk/image/upload/20161104_9sIDVFvwWRymfzsGlT6WTe2toy9WkWVG.jpg" onerror="hideImg();" width="106" height="149"></dt>
+
+#data_dump -- pull everything within this div
+        <div class="p2j_text">
+        .....
+        </div>

@@ -1,0 +1,10 @@
+TODO:
+
+
+cccpwomen.py is the real working file
+
+
+1. Make a list of what parts of the data structures (exampledatastructure.py) go to what pages.
+2. Write a parser for each type of page that extracts the data that you need from that page.
+3. Have the person() function in cccpwomen.py write the data to the database (or whatever data structure you use).  When you are figuring this out, just pass variables for any data you are not getting from the person page into the person() function.
+4. Nest all of the parsers to that they pass the variables down the line until the data gets passed to person() and is written into the data structure 
