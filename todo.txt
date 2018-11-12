@@ -1,5 +1,6 @@
 TODO:
 
+(11/11) short term todos have been integrated directly into the scrip comments
 
 cccpwomen.py is the real working file
 

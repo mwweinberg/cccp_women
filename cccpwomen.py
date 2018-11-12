@@ -15,6 +15,12 @@ title = ''
 #############THIS IS THE CITY PAGE STUFF####################
 ##############################################################
 '''
+#meta TODO (11/11): As I am writing these todos, I do not know how much of them have already been done in the code below
+
+#TODO 1 (11/11): There are two people at the top of the page. You need 4 pieces of information about them: 1. name, 2. url, 3. where they are in the order (rank_peer), 4. how many people total.  Most of this is probably in the <em> tags. For example: <em class=""><a href="personPage4314.htm">宋国权</a></em>
+
+#TODO 2 (11/11): There is a chart at the bottom of the page with three columns. The first column is county, the second is official #1, and the third is official #2.  You need 1. name of county, 2. URL of county, 3. name of dude (each), 4. url of dude, 5. rank_peer of dude, 6. how many people total.  Most of this is probably in: this is the only <ol class="fl"> on the page. within this <ol>, find each <li> (or <span>, if that's somehow easier).
+
 city_url = 'https://web.archive.org/web/20171004155730/http://ldzl.people.com.cn/dfzlk/front/chengqu1029.htm'
 
 city_page = requests.get(city_url)
@@ -120,15 +126,22 @@ def person():
 
 person()
 ##############################################################
-#############THIS IS THE TOP PAGE STUFF####################
+#############THIS IS THE PROVINCE PAGE STUFF####################
 ##############################################################
 #this stuff is all for the top level page
+
+# TODO 1 (11/11) Get the province name (it is the only H1 on the page)
+
+# TODO 2 (11/11) For the people listed with pictures AND the people listed in the next two sections (no pictures - these are the p tags), you need 1. name, 2. URL, 3. rank_peer, 4. peer total.  After doing that, dedupe via url (becuase 2 people may have the same name) and re-rank (if the same guy was #1 and #2, he becomes just #1 and the original #3 dude becomes #2.
+
+# TODO 3 (11/11) There is a chart at the bottom of the page with city + official 1 + official 2 (sometimes the chart wraps around itself so it looks like 6 things, but it is really just 3).  From this chart you only need 1. city name, and 2. city URL. Here's how jessica said to do it: this is the only <ol class="fl"> on the page. within this <ol>, find each <li> (or <span>, if that's somehow easier), and use the first href after that tag.  There are 2 other hrefs in each <li>, but we don't need them for our purposes in this loop.
+
 '''
 #initializes the dictionary
 province_dict = {}
 
 # extracts the list of provinces from the block on the left side of the page
-# like on this page https://web.archive.org/web/20171221213907/http://ldzl.people.com.cn:80/dfzlk/front/personProvince1.htm
+# like on this page https://web.archive.org/web/20171224064640/http://ldzl.people.com.cn:80/dfzlk/front/personProvince1028.htm
 for entry in soup.find_all("div", {"class": "fl nav_left_2j"}):
     #breaks out each province list item
     for item in entry.find_all("li"):
